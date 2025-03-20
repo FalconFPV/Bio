@@ -7,6 +7,8 @@ Este es un proyecto en **React** que funciona como una página de enlaces person
 Puedes acceder a mi página de enlaces sociales en el siguiente enlace:  
 👉 [https://falconfpv.github.io/Bio/](https://falconfpv.github.io/Bio/)
 
+---
+
 ## 🚀 Características
 - Diseño minimalista y responsive.
 - Links directos a mis redes sociales y portfolio.
