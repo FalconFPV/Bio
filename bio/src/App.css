@@ -1,20 +1,89 @@
 /* App.css */
+div#root {
+    width: 100%;
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'DMSansLight';
+  src: url("./fonts/DM_Sans/DM_Sans/static/DMSans-Medium.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DMSansMedium';
+  src: url("./fonts/DM_Sans/DM_Sans/static/DMSans-SemiBold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DMSansMedium", serif !important;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-height: 100vh;
+  font-family: "DMSansLight", serif !important;
+  background-color: rgb(4, 4, 4) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
 html{
     --imp-text-color: #f76008;
-    --imp-background-color: #0d0d0d;
+    --imp-background-dark-color: #0d0d0d;
     --imp-background-light-color: #fafeff;
 }
 
 /* Contenedor principal que ocupa toda la pantalla */
 .bio-container {
-    width: 100vw;
+    width: 100%;
     height: fit-content;
     display: flex;
     flex-direction: column; /* Para permitir el desplazamiento */
     position: relative;
     align-items: center;
     justify-content: center;
-    background-color: var(--imp-background-color);
+    background-color: var(--imp-background-dark-color);
     z-index: 1; /* Asegura que el contenido esté sobre el fondo */
 }
 
@@ -28,7 +97,7 @@ html{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: var(--imp-background-color);
+    background-color: var(--imp-background-dark-color);
     z-index: -1; /* Asegura que el fondo esté detrás del contenido */
     opacity: 0.4;
 }
@@ -50,40 +119,54 @@ html{
 .bio-card {
     margin-top: 70px;
     margin-bottom: 70px;
-    background: var(--imp-background-color);
+    background: var(--imp-background-dark-color);
     padding: 20px;
     border-radius: 24px;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.705);
+    box-shadow: 0px 4px 10px var(--imp-background-light-color);
     text-align: center;
     color: var(--imp-background-light-color);
     position: relative;
+    width: 500px;
     z-index: 1; 
 }
 
 /* Imagen dentro de la tarjeta */
 .bio-card-image {
     height: 46vh;
+    display: block;
+    border-top-right-radius: 24px;
+    border-top-left-radius: 24px;
 }
 
-.pic-shadow{
-    max-width: -webkit-fill-available;
-    width: 100%;
-  height: 46vh;
-  position: absolute;
-  box-shadow: inset 0px -28px 15px -12px hsl(0, 0%, 5%);;
-  z-index: 1;
+.profile-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Asegura que el contenedor se ajuste al contenido */
+}
+
+.pic-shadow {
+    position: absolute;
+    width: 100%; /* Se ajusta al ancho del contenedor (.profile-img) */
+    height: 100%; /* Opcional, depende de cuánto desenfoque quieres */
+    top: 0;
+    left: 0;
+    box-shadow: inset 0px -28px 15px -12px var(--imp-background-dark-color);
+    z-index: 1;
+    pointer-events: none; /* Evita que interfiera con interacciones */
 }
 
 /* Nombre y descripción */
 .bio-card-name {
     margin: 10px 0 5px;
-    font-size: 24px;
+    font-size: 40px;
     font-weight: bold;
 }
 
 .bio-card-description {
     font-size: 16px;
-    color: #555;
+    color: #6e6d6d;
 }
 
 /* Enlaces */
@@ -107,20 +190,26 @@ html{
 }
 
 /* Contenedor lengua y compartir perfil */
-.share-language{
+.share-darkmode{
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
 }
 
-.share button{
+.share button, .darkmode-button{
     width: 40px;
     height: 40px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--imp-background-light-color);
+    color: var(--imp-background-dark-color);
+}
+
+button:focus, button:focus-visible {
+    outline: none;
 }
 
 button:hover{
@@ -149,9 +238,9 @@ button:hover{
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background: var(--imp-background-color);
+    background: var(--imp-background-dark-color);
     border-radius: 24px;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.705);
+    box-shadow: 0px 4px 10px var(--imp-background-light-color);
     text-align: center;
     max-width: 400px;
     width: 100%;
@@ -172,6 +261,9 @@ button:hover{
 
 .bio-link-card-name {
     font-weight: bold;
+    font-size: 18px;
+    margin-top: 12px;
+    margin-bottom: 12px;
     width: 80%;
 }
 
@@ -182,8 +274,24 @@ p.bio-link-card-name {
 
 @media screen and (max-width: 500px) {
     .bio-card {
-        margin: 0;
+        margin: auto;
         border-radius: 0;
-        width: auto;
+        width: -webkit-fill-available;
     }
+
+    .bio-container {
+        width: 100%;
+    }
+
+    .bio-background {
+        display: none;
+    }
+}
+
+.bio-card-footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    color: var(--imp-background-light-color);
 }
