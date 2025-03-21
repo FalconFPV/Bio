@@ -95,6 +95,7 @@ const BioCard = () => {
          </div>
          <div className="bio-card-content">
             <h1 className="bio-card-name">Joan Company</h1>
+            <h2 className="bio-card-tag">@falcon_fpv</h2>
             <p className="bio-card-description">Professional Drone Pilot</p>
          </div>
          <div className="bio-card-links">
