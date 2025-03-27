@@ -1,6 +1,6 @@
 import React from 'react';
 import Email from '@mui/icons-material/Email';
-import Web from '@mui/icons-material/Web';
+import Language from "@mui/icons-material/Language";
 import Instagram from '@mui/icons-material/Instagram';
 import Facebook from '@mui/icons-material/Facebook';
 import Youtube from '@mui/icons-material/YouTube';
@@ -14,7 +14,7 @@ const links = [
    {
       name: "Web Portfolio",
       link: "https://falconfpv.github.io/PortfolioFalcon/",
-      icon: Web,
+      icon: Language,
    },
    {
       name: "Instagram",
