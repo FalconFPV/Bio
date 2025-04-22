@@ -8,7 +8,7 @@ import Youtube from '@mui/icons-material/YouTube';
 const links = [
    {
       name: "Mail",
-      link: "mailto:joanfpv@gmail.com",
+      link: "mailto:joan.falconfpv@gmail.com",
       icon: Email,
    },
    {
