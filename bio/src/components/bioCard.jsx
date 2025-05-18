@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import profileImage from "../assets/banner_joancompany2.jpg";
+import profileImage from "../assets/banner_joancompany5.jpg";
 import links from "../links";
 import IosShareIcon from "@mui/icons-material/IosShare";
 import NightlightRound from "@mui/icons-material/NightlightRound";

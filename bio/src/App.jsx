@@ -1,6 +1,6 @@
 import "./App.css";
 import BioCard from "./components/bioCard";
-import bgImage from "./assets/racing.jpg";
+import bgImage from "./assets/bg.webp";
 
 function App() {
    return (
